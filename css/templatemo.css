@@ -851,21 +851,7 @@ ul.slick-dots {
   overflow: hidden;
 }
 
-.card1 {
-  background-image: url(../img/pastelin.jpg);
-}
-.card2 {
-  background-image: url(../img/pastelin.jpg);
-}
-.card3 {
-  background-image: url(../img/pastelin.jpg);
-}
-.card4 {
-  background-image: url(../img/pastelin.jpg);
-}
-.card5 {
-  background-image: url(../img/pastelin.jpg);
-}
+
 
 .info {
   position: relative;
@@ -1481,4 +1467,3 @@ footer .right-text-content ul li a:hover {
     margin-top: 30px;
   }
 }
-
