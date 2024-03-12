@@ -11,12 +11,12 @@ if (typeof define === 'function' && define.amd) {
 }
 
 
-}(Function($)) { 
+}(function($) { 
     'use strict';
 
     var Slick = window.Slick || {};
 
-    Slick = (function()) {
+    Slick = (function() {
 
         var instance = 0; 
         function Slick (element, settings){
@@ -171,7 +171,9 @@ if (typeof define === 'function' && define.amd) {
               _.init(true);
 
         }
-    }
 
-}
-);
+        return Slick;
+
+    }());
+
+}()));
