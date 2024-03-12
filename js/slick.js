@@ -114,6 +114,62 @@ if (typeof define === 'function' && define.amd) {
 
             };
 
+            $.extend(_, _.initials);
+            _.activeBreakpoint = null;
+            _.animType = null;
+            _.animProp = null;
+            _.breakpoints = [];
+            _.breakpointSettings = [];
+            _.cssTransitions = false;
+            _.focussed = false;
+            _.interrupted = false;
+            _.hidden = 'hidden'
+            _.paused = true;
+            _.positionProp = null;
+            _.respondTo = null;
+            _.rowCount = 1;
+            _.shouldClick = true;
+            _.$slider = $(element);
+            _.$slideCache = null;
+            _.transformType = null;
+            _.transitionType = null;
+            _.visibilityChange = 'visibilitychange';
+            _.windowWidth = 0;
+            _.windowTimer = null;
+
+            dataSettings = $(element).data('slick') || {};
+            _.options = $.extend({}, _.defaults, settings, dataSettings);
+            _.currentSlide = _.options.initialSlide;
+            _.originalSettings = _.options;
+
+            if (typeof document.mozHidden !== 'undefinded'){
+                _.hidden = 'mozHidden';
+                _.visibilityChange = 'mozvisibilitycahnge';
+
+            } else if (typeof document.webkitHidden !== 'undefined'){
+
+                _.hidden = 'webkitHidden';
+                _.visibilityChange = 'webkitvisibilitychange';
+            }
+               
+              _.autoplay = $.proxy(_.autoPlay, _);
+              _.autoPlayClear = $.proxy(_.autoPlayClear, _);
+              _.autoplayIterator = $.proxy(_.autoplayIterator, _);
+              _.changeSlide = $.proxy(_.changeSlide, _);
+              _.clickHandler = $.proxy(_.clickHandler, _);
+              _.selectHandler = $.proxy(_.selectHandler, _);
+              _.setPosition = $.proxy(_.setPosition, _);
+              _.swipeHandler = $.proxy(_.swipeHandler, _);
+              _.dragHandler = $.proxy(_.dragHandler, _);
+              _.keyHandler = $.proxy(_.keyHandler, _);
+
+              _.instanceUid = instanceUid++;
+
+              _.htmlExpr = /^(?:\s*(<[\w\W]+>)[^>]*)$/;
+
+              _.registerBreakpoints();
+              _.init(true);
+
         }
     }
 
