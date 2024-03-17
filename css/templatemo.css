@@ -1511,3 +1511,8 @@ footer .right-text-content ul li a:hover {
   -webkit-animation-delay: 0.33333s;
   animation-delay: 0.33333s;
 }
+
+#preloader .jumper > div:nth-child(3) {
+  -webkit-animation-delay: 0.66666s;
+  animation-delay: 0.66666s;
+}
