@@ -1,3 +1,10 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Roboto', sans-serif;
+}
+
 @font-face {
   font-family: 'flexslider-icon';
   src: url('../fonts/flexslider-icon.eot');
@@ -294,6 +301,65 @@ html[xmlns] .flexslider .slides {
   margin-top: -350px;
 }
 
+.feedback{
+  padding: 110px 85px;
+}
+
+.feedback .customers{
+  margin-top: 50px;
+  display: flex;
+  gap: 40px;
+}
+
+.feedback .customers .item{
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border: 2px solid plum;
+  border-radius: 10px;
+  padding: 30px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.feedback .customers .item .rating{
+  color: gold;
+  font-size: 22px;
+}
+
+.feedback .customers .item:hover{
+  border-color: orangered;
+}
+
+.feedback .customers .item p{
+  line-height: 22px;
+  font-size: 14px;
+}
+
+.feedback .customers .item .user{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.feedback .customers .item .user img{
+  width: 40px;
+  height: 40px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.feedback .customers .item .user h5{
+  font-size: 13px;
+  font-weight: 500;
+  margin-bottom: 3px;
+}
+
+.feedback .customers .item .user p{
+  font-size: 12px;
+}
+
+
 /* ====================================================================================================================
  * reponsive
  * ====================================================================================================================*/
@@ -306,5 +372,13 @@ html[xmlns] .flexslider .slides {
   .flex-direction-nav .flex-next {
     opacity: 1;
     right: 10px;
+  }
+
+  .feedback{
+    flex-direction: column;
+  }
+
+  .feedback .customers{
+    flex-direction: column;
   }
 }
