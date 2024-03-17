@@ -1569,7 +1569,102 @@
 
     };
 
+    Slick.prototype.postSlide = function (index){
+        var _ = this;
+
+        if (!_.unslicked){
+            _.$slider.trigger('afterChange', [_, index]);
+
+            _.animating = false;
+
+            _.setPosition();
+
+            _.swipeLeft = null;
+
+            if (_.options.autoPlay){
+                _.autoPlay();
+
+            }
+
+            if(_.options.accesibility === true){
+                _.initADA();
+            }
+        }
+
+        Slick.prototype.prev = Slick.prototype.slickPrev = function() {
+
+            var _ = this;
     
+            _.changeSlide({
+                data: {
+                    message: 'previous'
+                }
+            });
+    
+        };
+
+        Slick.prototype.preventDefault = function(event){
+                   event.preventDefault();
+
+        };
+
+        Slick.prototype.progressiveLazyLoad = function(tryCount){
+
+            tryCount = tryCount || 1;
+
+            var _ = this,
+
+            $imgsToLoad = $('img[data-lazy]', _.$slider),
+            image,
+            imageSource,
+            imageToLoad,
+
+            if($imgsToLoad.lenght){
+                image = $imgsToLoad.first();
+                imageSource = image.attr('data-lazy');
+                imageToLoad = document.createElement('img');
+
+                imageToLoad.onload = function(){
+                    image
+                    .attr('scr', imageSource)
+                    .removeAttr('data-lazy')
+                    .removeClass('slick-loading')
+
+                    if (_.options.adaptiveHeight === true ){
+                        _setPosition();
+                    }
+
+                    _.$slider.trigger('LazyLoaded', [_, image, imageSource]);
+                    _.progressiveLazyLoad();
+
+                };
+
+                imageToLoad.onerror = function(){
+                    if (tryCount < 3){
+                        setTimeout(function(){
+
+                            _.progressiveLazyLoad(tryCount + 1);
+                        }, 500);
+
+                    } else {
+                        image 
+                        .removeAttr('data-lazy')
+                        .removeClass('slick-loading')
+                        .addClass('slick-lazy-load-error');
+
+                        _.$slider.trigger('lazyLoadError', [_, image, imageSource]);
+
+                        _.progressiveLazyLoad();
+
+                    }
+                };
+
+                
+            }
+        }
+
+
+    }
 
 
 
