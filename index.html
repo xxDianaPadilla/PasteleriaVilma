@@ -22,13 +22,6 @@
     </head>
     
     <body>
-    <div id="preloader">
-        <div class="jumper">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-    </div>  
     <header class="header-area header-sticky">
         <div class="container">
             <div class="row">
@@ -61,7 +54,8 @@
                             <h4>Pastelería Vilma</h4>
                             <h6>La mejor experiencia para ti</h6>
                             <div class="main-white-button scroll-to-section">
-                                <a href="">Pastel del día</a>
+                                <input type="file" id="file">
+                                <label for="file">Pastel del  día</label>
                             </div>
                         </div>
                     </div>
@@ -70,8 +64,8 @@
                     <div class="main-banner header-text">
                         <div class="Modern-Slider">
                           <div class="item">
-                            <div class="img-fill">
-                                <img src="img/pastelin.jpg" alt="">
+                            <div class="img-fill" id="img-selection">
+                                <img src="img/pastelin.jpg" id="image">
                             </div>
                           </div>
                         </div>
@@ -408,6 +402,7 @@
         </div>
     </footer>
 
+    <script src="js/upload-button.js"></script>
     <script src="js/jquery-2.1.0.min.js"></script>
     <script src="js/popper.js"></script>
     <script src="js/bootstrap.min.js"></script>

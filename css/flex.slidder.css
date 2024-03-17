@@ -14,9 +14,30 @@
 }
 
 .logo1{
-  height: 100px;
+  height: 110px;
   width: 140px;
   top: 0;
+}
+
+.btns-container{
+  display: flex;
+  gap: 14px;
+}
+
+input[type="file"]{
+  display: none;
+}
+
+label,
+button{
+  display: block;
+  font-size: 13px;
+  background-color: #fff;
+  color: orangered;
+  text-align: center;
+  padding: 8px;
+  border-radius: 6px;
+  cursor: pointer;
 }
 
 .flex-container a:hover,
