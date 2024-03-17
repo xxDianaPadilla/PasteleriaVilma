@@ -471,6 +471,10 @@ body {
   min-height: 80px;
 }
 
+.header-area.header-sticky .logo1{
+  height: 70px !important;
+}
+
 .header-area .nav {
   margin-top: 30px;
 }
@@ -1414,11 +1418,13 @@ footer .right-text-content ul li a:hover {
   color: #2a2a2a;
 }
 
+
 @media (max-width: 992px) {
   #top {
     padding-top: 100px;
     height: auto;
   }
+
   .header-area .main-nav .nav li.submenu:after {
     right: 3px;
   }

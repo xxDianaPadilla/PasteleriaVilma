@@ -14,7 +14,6 @@
 }
 
 .logo1{
-  height: 110px;
   width: 140px;
   top: 0;
 }
@@ -386,6 +385,10 @@ html[xmlns] .flexslider .slides {
   font-size: 12px;
 }
 
+#message{
+  color: #fff;
+  font-size: 30px;
+}
 
 /* ====================================================================================================================
  * reponsive
