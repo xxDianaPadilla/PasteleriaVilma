@@ -176,6 +176,7 @@
 
     }());
 
+    // si no hay ";" da error
     Slick.prototype.activeADA = functions();{
 
         var _ = this;
@@ -357,6 +358,8 @@
 
 
     };
+
+    // si no hay ";" da error
 
     Slick.prototype.applyTransition = functions(slide);{
         var_ = this,
