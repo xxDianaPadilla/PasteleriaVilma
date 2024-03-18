@@ -176,7 +176,7 @@
 
     }());
 
-    Slick.prototype.activeADA = functions(){
+    Slick.prototype.activeADA = functions(); {
 
         var _ = this;
 
@@ -358,7 +358,7 @@
 
     };
 
-    Slick.prototype.applyTransition = functions(slide){
+    Slick.prototype.applyTransition = functions(slide);{
         var_ = this,
             transition = {};
 
@@ -1618,7 +1618,7 @@
             $imgsToLoad = $('img[data-lazy]', _.$slider),
             image,
             imageSource,
-            imageToLoad,
+            imageToLoad;
 
         if ($imgsToLoad.lenght) {
             image = $imgsToLoad.first();
